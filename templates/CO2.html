@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CO2
+{% endblock %}
+
+
+{% block body %}
+
+
+  <h3>
+      Ви знаходитесь на сторінці для обчислення викидів CO2 ( діоксид вуглецю )
+    </h3>
+    <br>
+
+    <img src="files/kco2.png" width="250px" height="60px" alt="">
+
+<div >
+     <p>Введіть B<sub>i</sub> - витрати палива за проміжок часу = <input style="border-radius: 5px" id="B" placeholder="Введіть число" /> </p>
+
+    <p>Введіть Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input style="border-radius: 5px" id="Q" placeholder="Введіть число" /> </p>
+
+     <p>Введіть  C<sup>r</sup> - масовий вміст вуглецю в паливі на робочу масу, % = <input style="border-radius: 5px" id="Cr" placeholder="Введіть число" /> </p>
+
+      <p>Введіть e<sub>c</sub> - ступінь окислення вуглецю палива = <input style="border-radius: 5px" id="ec" placeholder="Введіть число" /> </p>
+</div>
+
+
+     <button class="btn btn-primary"  onclick="func()">Обчислити</button>
+        <p></p>
+     <p>Валовий викид:</p>
+
+      <p id="result" title="Result"></p>
+
+
+ <script>
+    function func(){
+
+
+          var B = Number(document.getElementById("B").value);
+          var Q = Number(document.getElementById("Q").value);
+          var Cr = Number(document.getElementById("Cr").value);
+          var ec = Number(document.getElementById("ec").value);
+
+          var result = (1/1000000) * ( (44/12) * (Cr/100) * (1000000/Q) * (ec) ) * Q * B;
+
+          document.getElementById("result").innerHTML = result;
+          }
+
+ </script>
+  <br>
+  <p>Навігація по сайту:</p>
+  <ul>
+   <li> <a href="index.html">Повернутися на головну сторінку</a></li>
+
+  <li> <a href="so2.html">Розрахувати викид SO2 ( діоксид сірки )</a></li>
+
+  <li> <a href="tverdi.html">Розрахувати викид твердих частинок</a></li>
+
+  <li><a href="vazhkimetaly.html">Розрахувати викид важких металів</a></li>
+
+  <li><a href="nox.html">Розрахувати викид NOx ( оксиди азоту )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид CO ( оксид вуглецю )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид N2O ( оксид діазоту )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид CH4 ( метан )</a></li>
+
+
+</ul>
+
+
+
+{% endblock %}
+
+
+

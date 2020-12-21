@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Головна
+{% endblock %}
+
+
+{% block body %}
+
+
+  <h3>Ви знаходитесь на сторінці для обчислення викидів Твердих частинок</h3>
+
+
+
+<div>
+        <p>Введіть B<sub>i</sub> - витрати палива за проміжок часу = <input style="border-radius: 5px" type="number" id="B" placeholder="Введіть B" /> </p>
+
+        <p>Введіть Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input style="border-radius:  5px" id="Q" placeholder="Введіть Q" /> </p>
+
+        <p>Введіть k<sub>твS</sub> - показник емісії твердих продуктів взаємодії сорбенту та оксидів сірки і твердих
+    частинок сорбенту, г/ГДж = <input style="border-radius: 5px" id="ktvS" placeholder="Введіть k" /> </p>
+
+        <p>Введіть a<sub>вин</sub> - частка золи, яка виходить з котла у вигляді леткої золи = <input style="border-radius: 5px" id="avin" placeholder="Введіть aвин" /> </p>
+
+        <p>Введіть A<sup>r</sup> - масовий вміст золи в паливі на робочу масу, % = <input style="border-radius: 5px" id="Ar" placeholder="Введіть Ar" /> </p>
+
+        <p>Введіть n<sub>зу</sub> - ефективність золоуловлюваної установки ( Не Більше Одиниці! ) = <input style="border-radius: 5px" id="Nzu" placeholder="Введіть nзу" /> </p>
+
+        <p>Введіть Г<sub>вин</sub> - масовий вміст горючих речовин у викидах твердих частинок, % = <input style="border-radius: 5px" id="Gvin" placeholder="Введіть Гвин" /> </p>
+
+         <button type="button" class="btn btn-primary" onclick="func()">Обчислити</button>
+        <p></p>
+
+         <p><br>Валовий викид:</p>
+
+          <p id="result" title="Result"></p>
+
+</div>
+     <script>
+        function func(){
+
+              var Q = Number(document.getElementById("Q").value);
+              var B = Number(document.getElementById("B").value);
+              var avin = Number(document.getElementById("avin").value);
+              var Ar = Number(document.getElementById("Ar").value);
+              var Nzu = Number(document.getElementById("Nzu").value);
+              var ktvS = Number(document.getElementById("ktvS").value);
+              var Gvin = Number(document.getElementById("Gvin").value);
+
+              var result = (1/1000000) * ( (1000000/Q) * avin * (Ar/(100-Gvin)) * (1 - Nzu) + ktvS ) * Q * B;
+
+              document.getElementById("result").innerHTML = result;
+              }
+
+     </script>
+      <br>
+      <p>Навігація по сайту:</p>
+      <ul>
+      <li> <a href="index.html">Повернутися на головну сторінку</a></li>
+      <li> <a href="nox.html">Розрахувати викид NOx ( оксиди азоту )</a></li>
+
+      <li> <a href="so2.html">Розрахувати викид S02 ( діоксид сірки )</a></li>
+
+      <li><a href="vazhkimetaly.html">Розрахувати викид важких металів</a></li>
+
+      <li><a href="co2.html">Розрахувати викид CO2 ( діоксиду вуглецю )</a></li>
+
+      <li><a href="zagalniy.html">Розрахувати викид CO ( оксид вуглецю )</a></li>
+
+      <li><a href="zagalniy.html">Розрахувати викид N2O ( оксид діазоту )</a></li>
+
+      <li><a href="zagalniy.html">Розрахувати викид CH4 ( метан )</a></li>
+
+
+
+
+    </ul>
+
+
+
+
+{% endblock %}
+
+
+

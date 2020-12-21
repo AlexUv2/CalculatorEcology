@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Розрахунки
+{% endblock %}
+
+
+{% block body %}
+
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Тверді Частинки</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>А<sup>r</sup></li>
+            <li>k<sub>твS</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>n<sup>зу</sup></li>
+            <li>Г<sup>вин</sup></li>
+            <li>а<sup>вин</sup></li>
+            <br>
+        </ul>
+        <a href="/calc-heavy"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">SO<sub>2</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>S<sup>r</sup></li>
+            <li>n<sup>|</sup></li>
+            <li>n<sup>||</sup></li>
+            <li>B</li>
+            <br>
+            <br>
+        </ul>
+          <a href="/SO2"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">NO<sub>x</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>B</li>
+            <li>n<sup>|</sup></li>
+            <li>n<sup>||</sup></li>
+            <li>B</li>
+            <li>f<sub>н</sub></li>
+            <li>k<sub>NO<sub>x</sub></sub></li>
+        </ul>
+          <a href="/NOx"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">CO</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <br>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>k<sub>ij</sub></li>
+            <li>B<sup>i</sup></li>
+            <br>
+            <li>Значення емісії з таблиці</li>
+            <br>
+        </ul>
+        <a href="/CO"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">CO<sub>2</sub></h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>B<sup>i</sup></li>
+            <li>e<sup>c</sup></li>
+            <li>C<sub>r</sub></li>
+            <li>e<sub>c</sub></li>
+            <li>k<sup>CO</sup><sub>2</sub></li>
+            <br>
+        </ul>
+          <a href="/CO2"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">N<sub>2</sub>O</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <strong>Необхідно для розрахунку</strong><p></p>
+             <br>
+            <br>
+            <li>Q<sup>r</sup><sub>i</sub></li>
+            <li>k<sub>ij</sub></li>
+            <li>B<sup>i</sup></li>
+            <br>
+            <li>Значення емісії з таблиці</li>
+            <br>
+        </ul>
+          <a href="/N2O"><button type="button" class="btn btn-lg btn-block btn-primary">Розрахувати</button></a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+

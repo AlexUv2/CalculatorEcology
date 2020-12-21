@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SO2
+{% endblock %}
+
+
+{% block body %}
+
+ <h3>
+      Ви знаходитесь на сторінці для обчислення викидів Діоксиду сірки SO2
+    </h3>
+    <br>
+
+    <img src="files/kso2.png" width="300px" height="80px" alt="">
+
+     <p>Введіть B<sub>i</sub> - витрати палива за проміжок часу = <input style="border-radius: 5px" id="B" placeholder="Введіть число" /> </p>
+
+    <p>Введіть <span style="font-style: italic;">B</span> - коефіцієнт роботи очисної установки = <input style="border-radius: 5px" id="Beta" placeholder="Введіть число" /> </p>
+
+    <p>Введіть Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input style="border-radius: 5px" id="Q" placeholder="Введіть число" /> </p>
+
+    <p>Введіть k<sub>твS</sub> - показник емісії твердих продуктів взаємодії сорбенту та оксидів сірки і твердих
+частинок сорбенту, г/ГДж = <input style="border-radius: 5px" id="ktvS" placeholder="Введіть число" /> </p>
+
+    <p>Введіть S<sup>r</sup> - вміст сірки в паливі на робочу масу за проміжок часу = <input style="border-radius: 5px" id="Sr" placeholder="Введіть число" /> </p>
+
+    <p>Введіть A<sup>r</sup> - масовий вміст золи в паливі на робочу масу, % = <input style="border-radius: 5px" id="Ar" placeholder="Введіть число" /> </p>
+
+    <p>Введіть n<sub>I</sub> - ефективність первинних заходів = <input style="border-radius: 5px" id="n1" placeholder="Введіть число" /> </p>
+
+    <p>Введіть n<sub>II</sub> - ефективність вторинних заходів = <input style="border-radius: 5px" id="n2" placeholder="Введіть число" /> </p>
+
+     <button class="btn btn-primary" onclick="func()">Обчислити</button>
+<p></p>
+     <p>Валовий викид:</p>
+
+      <p id="result" title="Result"></p>
+
+
+ <script>
+    function func(){
+
+          var Beta = Number(document.getElementById("Beta").value);
+          var B = Number(document.getElementById("B").value);
+          var Q = Number(document.getElementById("Q").value);
+          var Sr = Number(document.getElementById("Sr").value);;
+          var Ar = Number(document.getElementById("Ar").value);;
+          var n1 = Number(document.getElementById("n1").value);;
+          var n2 = Number(document.getElementById("n2").value);;
+          var ktvS = Number(document.getElementById("ktvS").value);;
+
+          var result = (1/1000000) * ((1000000 / Q)*((2 * Sr)/100) *(1 - n1)*(1 - n2 * Beta)) * Q * B;
+
+          document.getElementById("result").innerHTML = result;
+          }
+
+ </script>
+  <br>
+  <p>Навігація по сайту:</p>
+  <ul>
+  <li> <a href="index.html">Повернутися на головну сторінку</a></li>
+
+  <li> <a href="nox.html">Розрахувати викид NOx ( оксиди азоту )</a></li>
+
+  <li> <a href="tverdi.html">Розрахувати викид твердих частинок</a></li>
+
+  <li><a href="vazhkimetaly.html">Розрахувати викид важких металів</a></li>
+
+  <li><a href="co2.html">Розрахувати викид CO2 ( діоксиду вуглецю )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид CO ( оксид вуглецю )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид N2O ( оксид діазоту )</a></li>
+
+  <li><a href="zagalniy.html">Розрахувати викид CH4 ( метан )</a></li>
+
+
+</ul>
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CO
+{% endblock %}
+
+{% block body %}
+
+
+ <h3>
+      Ви знаходитесь на сторінці для загального обчислення викидів ( знаючи ваш показник емісії, взятий з таблиці )
+    </h3>
+    <br>
+    <p> k - показник емісії, г/ГДж = <input type="number" style="border-radius: 5px" id="num1" placeholder="Введіть число" /> </p>
+    <p>B<sub>i</sub> - витрати палива за проміжок часу = <input type="number" style="border-radius: 5px" id="num2" placeholder="Ведіть число" /> </p>
+    <p>Q<sup>r</sup><sub>i</sub> - нижча робоча теплота згоряння палива, МДж/кг = <input type="number" style="border-radius: 5px" id="num3" placeholder="Ведіть число" /> </p>
+
+     <button class="btn btn-primary" onclick="func()">Обчислити</button>
+<p></p>
+     <p>Валовий викид:</p>
+
+      <p id="result" title="Result"></p>
+
+
+ <script>
+    function func(){
+          var num1 = Number(document.getElementById("num1").value);
+          var num2 = Number(document.getElementById("num2").value);
+          var num3 = Number(document.getElementById("num3").value);
+
+          var result = (1/1000000) * num3 * num1 * num2;
+
+          document.getElementById("result").innerHTML = result;
+          }
+
+ </script>
+  <br>
+  <p>Навігація по сайту:</p>
+  <ul>
+   <li> <a href="index.html">Повернутися на головну сторінку</a></li>
+
+  <li><a href="tverdi.html">Розрахувати викид твердих частинок</a></li>
+
+
+  <li> <a href="nox.html">Розрахувати викид NOx ( оксиди азоту )</a></li>
+
+
+  <li><a href="vazhkimetaly.html">Розрахувати викид важких металів</a></li>
+
+
+  <li><a href="co2.html">Розрахувати викид CO2 ( діоксиду вуглецю )</a></li>
+
+
+</ul>
+  <p>Якщо Ви бажаєте розрахувати викиди Метану(CH4), Оксиду діазоту(N2O) або Оксиду вуглецю(CO), то залишайтесь на поточній сторінці :) </p>
+
+
+
+
+{% endblock %}
+
+
+
